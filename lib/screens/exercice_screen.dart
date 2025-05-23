@@ -30,9 +30,36 @@ class ExerciceScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
-        title: Text("${exercicioModelo.nome} - ${exercicioModelo.treino}"),
+        title: Column(
+          children: [
+            Text(
+              exercicioModelo.nome,
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              exercicioModelo.treino,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 16, 98, 128),
+        elevation: 0,
+        titleTextStyle: const TextStyle(
+          color: Colors.white,
+        ),
+        toolbarHeight: 72,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(32),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
